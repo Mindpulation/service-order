@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  mongo:
+    image: mongo
+    container_name: "db-order"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_DATABASE: db-order
+    volumes:
+      - './dockervolume/mongodb:/data/db'
+    ports:
+      - 27017:27017
+
+  app:
+    container_name: 'service-order'
+    image: devkotakjualan/service-order
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3040:3040'
+    depends_on:
+      - 'mongo'
+
+networks:
+  WServiceRejectNetwork:
+    driver: bridge
