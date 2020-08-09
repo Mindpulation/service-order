@@ -20,4 +20,4 @@ app.use( async (ctx, next)=>{
 app.use(r.routes());
 app.use(r.allowedMethods());
 
-await app.listen({port:1700});
+await app.listen({port:3040});
