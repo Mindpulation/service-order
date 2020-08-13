@@ -15,5 +15,5 @@ ADD . .
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
 RUN deno cache Index.ts --unstable 
 
-CMD ["run", "--allow-net", "--allow-write", "--allow-read", "--allow-plugin", "Index.ts"]
+CMD ["deno","run", "--allow-net", "--allow-write", "--allow-read", "--allow-plugin", "Index.ts"]
 EXPOSE 3040
