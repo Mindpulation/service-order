@@ -3,7 +3,7 @@ import { Collection } from "https://deno.land/x/mongo@v0.9.1/ts/collection.ts";
 import Model from "../model/index.ts";
 import { Order } from '../model/order.ts';
 
-const m = new Model("mongodb://mongo-indo1:27017/OrderDB", "OrderDB", "Order");
+const m = new Model("mongodb://mongo-indo1:27017/", "OrderDB", "Order");
 
 export default class Controller {
 
