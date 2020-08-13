@@ -13,7 +13,7 @@ USER deno
 # These steps will be re-run upon each file change in your working directory:
 ADD . .
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno cache Index.ts --unstable 
+RUN deno cache Index.ts --unstable
 
-CMD ["deno","run", "--allow-net", "--allow-write", "--allow-read", "--allow-plugin", "Index.ts"]
+CMD ["run", "--allow-net", "--allow-write", "--allow-read", "--allow-plugin", "--unstable", "Index.ts"]
 EXPOSE 3040
